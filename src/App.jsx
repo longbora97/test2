@@ -1,9 +1,11 @@
 import { useState } from "react";
+const myOS = require("os")
 
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [user, setUser] = useState([]);
+  
 
   function onSubmitHandle(e) {
     e.preventDefault(true);
@@ -24,6 +26,7 @@ function App() {
     <div className="container mx-auto p-5 font-thin">
       <div className="p-5 w-full">
         <h1 className="text-center text-6xl font-thin">Insert Form</h1>
+        <h1 className="text-center font-thin">{myOS.userInfo()}</h1>
       </div>
       <div className="w-full md:flex">
         <div className="w-full md:w-1/4">
