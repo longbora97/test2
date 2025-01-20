@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #2cb3b3;
+    color: white;
+  }
+  table tbody tr td:nth-child(1) {
+    text-align: center;
+  }
+}
