@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [user, setUser] = useState([]);
-  
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [user])
 
   function onSubmitHandle(e) {
     e.preventDefault(true);
@@ -33,6 +37,7 @@ function App() {
             <label htmlFor="fullname">Full Name</label>
             <br />
             <input
+              ref={inputRef}
               type="text"
               id="fullname"
               value={name}
